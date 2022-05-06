@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    text-align: center;
+    background-color: hsla(230, 40%, 50%, 1);
+}
+
+body:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+    height: 100%;
+}
+
+h1 {
+    display: inline-block;
+    color: white;
+    font-family: "Righteous", serif;
+    font-size: 20em;
+    text-shadow: 0.03em 0.03em 20px hsl(258deg 70% 40%);
+}
+
+h1:after {
+    content: attr(data-shadow);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    text-shadow: none;
+    background-image: linear-gradient( 130deg, transparent 40%, hsla(0, 0%, 0%, 1) 0, hsla(0, 170%, 280%, 1) 60%, transparent 0);
+    background-size: 0.05em 0.05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shad-anim 8s linear infinite;
+}
+
+@keyframes shad-anim {
+    0% {
+        background-position: 0 0;
+    }
+    0% {
+        background-position: 100% -100%;
+    }
+}
